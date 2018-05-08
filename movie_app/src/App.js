@@ -25,7 +25,15 @@ const movies = [
 ]
 
 class App extends Component {
+  componentWillMount() {
+    console.log(1);
+  }
+
+  componentDidMount() {
+    console.log(3);
+  }
   render() {
+    console.log(2);
     return (
       <div className="App">
         {movies.map((movie, index) => <Movie title={movie.title} poster={movie.poster} key={index}/>)}
