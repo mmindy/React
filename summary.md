@@ -65,5 +65,20 @@ React의 컨셉 : prop & state
   - `componentWillUpdate()` : update 상태
   - `componentDidUpdate()` : update 후의 상태
 
+### Thinking in React Component State - state란?!
+- **State**란 리엑트 컴포넌트 안에 있는 오브젝트
+- **state update 하기 -- `setState()`**
+  - `componentDidMount()`에서 컴포넌트가 마운트된 후에 update 작업함
+  - `this.state = "바꿀내용"` 이렇게 직접적으로 하는 게 아니라,   
+    `setState` 활용하여 변경!
+  - `render()`는 state가 업데이트할 때마다 작동
+  - `render()`는 처음엔 `state = {}`에서 실행되고, 후에 `setState()`에서 재실행됨!
 
-  
+### Practicing this setState - state 추가하기
+-  `App`클래스 외부에 있던 영화 목록(`movies`)을 `state` 안으로 끌어 들인 후, 영화 추가하기
+- spread oparator(`...`) 활용하여 기존 목록(`this.state.movies`) 그대로 둔 채, 영화 추가 가능
+- `setState()` 활용하여 infinite scroll 등 활용할 수 있음
+
+### Loading State -- `setTimeout`으로 API call 구현하기
+- **API call** : Component Loading without API -> call API(for data) -> API return data -> update my component's state 
+- class 내 메서드에 언더바(`_`) 쓰는 이유는 react 자체 메서드와 구분하기 위함!
