@@ -82,3 +82,20 @@ React의 컨셉 : prop & state
 ### Loading State -- `setTimeout`으로 API call 구현하기
 - **API call** : Component Loading without API -> call API(for data) -> API return data -> update my component's state 
 - class 내 메서드에 언더바(`_`) 쓰는 이유는 react 자체 메서드와 구분하기 위함!
+
+### Smart & Dumb
+- 모든 컴포넌트가 state를 갖고 있지는 않음
+- **Smart Component** : State O / Props O
+  - class component
+- **Dumb Component** : State X / Props O  (functional component)
+  - return을 위한 Component로, component will mount / render function / update state 등이 필요 없음
+  - 한개의 props(`{poster}`)와 한개의 html만 필요함
+  ```js
+  function MoviePoster ( {poster} ) {
+    return {
+      <img src={poster} alt=""/>
+    }
+  }
+  ```
+
+
