@@ -80,7 +80,7 @@ React의 컨셉 : prop & state
 - `setState()` 활용하여 infinite scroll 등 활용할 수 있음
 
 ### Loading State -- `setTimeout`으로 API call 구현하기
-- **API call** : Component Loading without API -> call API(for data) -> API return data -> update my component's state 
+- **API call** : Component Loading without API -> call API(for data) -> API return data -> update my component's state  
 - class 내 메서드에 언더바(`_`) 쓰는 이유는 react 자체 메서드와 구분하기 위함!
 
 ### Smart & Dumb
@@ -98,4 +98,17 @@ React의 컨셉 : prop & state
   }
   ```
 
+### AJAX on React
+- AJAX (Asynchronous JavaScript and XML)
+- JSON (JavaScript Object Notation)
 
+- AJAX 장점 :  
+  - 새로고침 없이 데이터 불러올 수 있음
+  - 데이터 로딩 시 작업 내역이 외부에 노출되지 않고 가져올 수 있음
+
+- fetch를 사용해서 url에서 데이터를 get 해보자
+(ajax로 데이터를 가져오는 방법은 다양하지만, 해당 강의에서는 GET으로 데이터를 받는 것만 다룸)
+
+
+- JSON data example :
+  (https://yts.am/api/v2/list_movies.json)[https://yts.am/api/v2/list_movies.json]
