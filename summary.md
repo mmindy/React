@@ -112,3 +112,8 @@ React의 컨셉 : prop & state
 
 - JSON data example :
   (https://yts.am/api/v2/list_movies.json)[https://yts.am/api/v2/list_movies.json]
+
+
+### Promise
+- Asynchronous programming / 시나리오 작성 가능
+- fetch 성공 시, then으로 이후 작업을, 실패 시 catch로 이후 작업 가능
