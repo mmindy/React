@@ -150,3 +150,8 @@ _renderMovies = () => {
   return movies;
 }
 ```
+
+### Updating Movie
+- JSON 데이터에 기초하여 다양한 props를 추가하여 어플리케이션에 추가할 수 있다
+- JSX 에서 `class`는 `className`으로 사용!
+- 함수는 작은 단위로 분리하여 사용(컴포넌트로 쪼게고 작게 나누면 됨!)
