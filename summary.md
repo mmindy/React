@@ -117,3 +117,36 @@ React의 컨셉 : prop & state
 ### Promise
 - Asynchronous programming / 시나리오 작성 가능
 - fetch 성공 시, then으로 이후 작업을, 실패 시 catch로 이후 작업 가능
+
+### Async Await
+- Await , Async
+- data를 state에 올리는 작업
+
+**async**
+- 클래스 내 메서드 앞에 붙여줘서 비동기 처리 함수 구분
+
+**await**
+-  await로 불러낸 function이 끝나기를 기다리는 것. (성공/실패 여부가 아님)
+- 해당 작업이 끝나고 하단의 코드 실행됨
+
+> cf. component의 key는 index를 사용하면 너무 느려짐!
+```js
+// 전 : index 사용 예
+_renderMovies = () => {
+  const movies = this.state.movies.map((movie, index) => {
+    return <Movie title={movie.title} poster={movie.large_cover_image} key={index}/>
+  })
+
+  return movies;
+}
+```
+```js
+// 후 : 불러온 data의 id값으로 넣음
+_renderMovies = () => {
+  const movies = this.state.movies.map(movie => {
+    return <Movie title={movie.title} poster={movie.large_cover_image} key={movie.id}/>
+  })
+
+  return movies;
+}
+```
