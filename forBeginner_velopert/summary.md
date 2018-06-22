@@ -29,8 +29,25 @@
 - - -
 
 # JSX 기본 문법
-리액트 컴포넌트 생성 시, render 부분에 사용되는 문법
+
+- 리액트 컴포넌트 생성 시, render 부분에 사용되는 문법
+- html과 비슷하지만 js로 변환됨  
+
+**꼭 지켜야할 것들**
 - 항상 태그는 닫아야 한다!
+  ```js
+  class App extends Component {
+    render() {
+      return (
+        <div>
+          <div></div>
+          <input type="text" />
+        </div>
+      )
+    }
+  }
+  ```
+
 - 두개 이상의 태그는 하나의 태그로 감싸주어야 한다
   ```js
   class App extends Component {
@@ -39,6 +56,68 @@
         <div>
           <div></div>
           <div></div>
+        </div>
+      )
+    }
+  }
+  ```
+  ```js
+  // react 16.2에서 나온 대안
+  <Fragment>
+    <div></div>
+    <div></div>
+  </Fragment>
+  ```
+
+- JSX에서 JS값 사용하기 : `{ }`
+  ```js
+  class App extends Component {
+    render() {
+      const name = "name a";
+      return (
+        <div>
+          hello {name}
+        </div>
+      )
+    }
+  }
+  ```
+
+- 조건부 랜더링(조건문) 
+  ```js
+  // 조건이 하나일 때 - 삼항연산자, &&
+  class App extends Component {
+    render() {
+      const name = "minji~~~~~";
+      return (
+        <div>
+          {
+            1 + 1 === 2 ? "맞다" : "틀리다"
+          }
+          {
+            name === "minji!" && <div>minji!!</div>
+          }
+        </div>
+      )
+    }
+  }
+  ```
+  ```js
+  // 조건이 여러개일 때 - 일반적인 경우, 외부에서 작업
+  // IIFE
+  class App extends Component {
+    render() {
+      const value = 1;
+      return (
+        <div>
+          {
+            (() => {
+              if ( value === 1 ) return <div>1!</div>
+              if ( value === 2 ) return <div>2!</div>
+              if ( value === 3 ) return <div>3!</div>
+              return <div>없따</div>
+            })()
+          }
         </div>
       )
     }
