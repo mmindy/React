@@ -188,9 +188,9 @@
   ```
 
 # Section 04. props 와 state
-- props : 부모가 자식에게 넘겨주는 것
 
 ## Props를 사용하는 방법
+- props : 부모가 자식에게 넘겨주는 것
 
 ```js
 //App.js
@@ -211,7 +211,7 @@ export default App;
 import React, { Component } from 'react';
 
 class MyName extends Component {
-  static defaultProps = {
+  static defaultProps = { // defaultProps로 기본값 설정할 수 있음
     name: 'deault name'
   };
   render() {
@@ -243,4 +243,65 @@ class MyName extends Component {
 MyName.defaultProps = {
   name: 'deault name'
 }
+```
+
+- 함수형 컴포넌트
+```js
+const MyName = ( {name} ) => {  // 비구조 할당으로 객체 할당하여 받아옴
+  return <div>Hello! My name is {name}!</div>
+}
+
+MyName.defaultProps = {
+  name : "default name"
+}
+```
+
+## state 사용하는 방법
+- props : 컴포넌트 랜더링 시 특정 값 설정. 부모가 자식에게 내려줄 때 사용되며, 자식입장에서는 읽기 전용
+- **state** :   
+  - state는 컴포넌트 내부에 존재하며, 컴포넌트 내부에서 바뀔 수 있으며, 바꿀 때마다 리랜더링 됨
+  - state를 업데이트할 때는 `setState`를 사용하며, 이를 사용하지 않을 경우 리랜더링이 되지 않아 원하는 값을 가질 수 없음
+
+
+```js
+import React, { Component } from 'react';
+
+class Counter extends Component {
+  state = {
+    number: 1
+  };
+  
+  constructor(props) {
+    super(props);
+    this._handleDecrease = this._handleDecrease.bind(this); // 일반함수 사용 시 constructor 에서 this 바인딩 해야함
+    this._handleIncrease = this._handleIncrease.bind(this);
+  }
+
+  _handleIncrease = () => {
+    // 화살표 함수 사용하여 this 바인딩
+    this.setState({
+      number: this.state.number + 1
+    });
+  };
+  
+  _handleDecrease = () => {
+    this.setState({
+      // update 시 setState
+      number: this.state.number - 1
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <h1>Counter</h1>
+        <div>값 : {this.state.number}</div>
+        <button onClick={this._handleIncrease}>+</button>
+        <button onClick={this._handleDecrease}>-</button>
+      </div>
+    );
+  }
+}
+
+export default Counter;
 ```
