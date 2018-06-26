@@ -305,3 +305,25 @@ class Counter extends Component {
 
 export default Counter;
 ```
+
+# LifeCycle API
+
+LifeCycle API 사용하는 경우,  
+컴포넌트가 브라우저에서 
+1. **나타날 때 (Mounting)** 
+2. **업데이트될 때 (Updating)** - 컴포넌트의 props나 state가 바뀔 때
+3. **사라질 때 (Unmounting)**
+
+![lifeCyle API](./lifeCycleAPI.jpg)
+> 출처 : [트위터](https://twitter.com/dan_abramov/status/981712092611989509)
+
+- `constructor` : 생성자 함수. 브라우저 처음 실행될 때의 초기설정
+- `getDerivedStateFromProps` : props로 받은 값을 state로 동결
+- `render` : 어떤 DOM을 만들지 정의
+- `componentDidMount` : 컴포넌트가 브라우저에 나타난 시점에 일어나는 것들 설정  
+  : 외부 라이브러리 사용 시, 라이브러리와 DOM 연결 / AJAX 요청
+- **`shouldComponentUpdate`** : 컴포넌트가 업데이트되는 성능 최적화   
+  : `true/false` 반환 rendering 여부 결정. virtual DOM에 render 할지 말지 결정
+- `getSnapshotBeforeUpdate` : rendering 한 결과물이 브라우저에 호출되기 직전(예. scroll의 위치나 화면의 크기 가져올 때)
+- `componentDidUpdate` : 컴포넌트 업데이트 이후 작업
+- `componentWillUnmount` 
