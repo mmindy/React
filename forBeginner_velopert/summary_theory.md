@@ -327,3 +327,5 @@ LifeCycle API 사용하는 경우,
 - `getSnapshotBeforeUpdate` : rendering 한 결과물이 브라우저에 호출되기 직전(예. scroll의 위치나 화면의 크기 가져올 때)
 - `componentDidUpdate` : 컴포넌트 업데이트 이후 작업
 - `componentWillUnmount` 
+
+![관련 내용](https://react-anyone.vlpt.us/05.html)
