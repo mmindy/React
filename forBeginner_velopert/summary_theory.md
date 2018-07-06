@@ -15,7 +15,7 @@
 - 양방향 바인딩 : model과 view 사이 값 변화하면 서로 값 변화시켜줌
 
 **React**
-- **data 변화 시, 가상의 DOM에 먼저 렌더링 후, 기존 DOM과 비교, 변화 필요한 곳에만 update
+- data 변화 시, 가상의 DOM에 먼저 렌더링 후, 기존 DOM과 비교, 변화 필요한 곳에만 update
 
 ## 리액트를 특별하게 만드는 점
 - virtual DOM 은 Vue, Marko, Maquette, Mithril 등 다양하게 쓰임
@@ -72,6 +72,10 @@
     <div></div>
     <div></div>
   </Fragment>
+  /*
+  Fragment로 감쌀 경우, 랜더링 시 불필요한 div태그가 안 생긴다!
+  jsx에 입력한 그대로 root 태그에 들어가는데 fragment는 html 상에 출력되지 않는다!
+  */
   ```
 
 - JSX에서 JS값 사용하기 : `{ }`
@@ -200,7 +204,7 @@ import MyName from './MyName';
 class App extends Component {
   render() {
     // hello
-    return <MyName />;
+    return <MyName name="minji" />;
   }
 }
 
@@ -211,7 +215,7 @@ export default App;
 import React, { Component } from 'react';
 
 class MyName extends Component {
-  static defaultProps = { // defaultProps로 기본값 설정할 수 있음
+  static defaultProps = { // defaultProps로 기본값 설정할 수 있음 
     name: 'deault name'
   };
   render() {
@@ -245,7 +249,12 @@ MyName.defaultProps = {
 }
 ```
 
-- 함수형 컴포넌트
+- 함수형 컴포넌트  
+  - 기능없이 단순 props만 받아서 출력하는 애
+  - react 외 컴포넌트 불러오지 않아도 됨
+  - 초기 마운트 속도가 미세하게 빠르고, 메모리도 적게 듦  
+    (컴포넌트가 많지 않은 이상, 큰 차이는 없음)
+    
 ```js
 const MyName = ( {name} ) => {  // 비구조 할당으로 객체 할당하여 받아옴
   return <div>Hello! My name is {name}!</div>
