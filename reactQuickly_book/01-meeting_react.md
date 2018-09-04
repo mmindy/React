@@ -141,6 +141,7 @@ React는 UI라이브러리일 뿐이므로, 어떤 형태의 백엔드나 프론
 
 
 ## 1.6 첫번째 React App 만들기 : Hello World
+[실습코드](./01-hello_world)
 ```html
 <head>
   <script src="js/react.js"></script>
