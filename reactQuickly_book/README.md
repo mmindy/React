@@ -9,8 +9,8 @@
 ### index
 
 #### 1부 React 기초
-- 1장 React 살펴보기 
-- 2장 React 첫걸음 
+- 1장 [React 살펴보기](./01-meeting_react.md)
+- 2장 [React 첫걸음](./02-baby_steps_with_react.md)
 - 3장 JSX 
 - 4장 React 컴포넌트의 상태 객체 
 - 5장 React 컴포넌트 라이프사이클 이벤트 
@@ -34,4 +34,6 @@
 - 20장 프로젝트: Jest, Express, MongoDB를 이용한 자동완성 컴포넌트 구현 
 
 - - -
-> [원서 사이트](https://www.manning.com/books/react-quickly)
+### link
+- [원서 사이트](https://www.manning.com/books/react-quickly)   
+- [github](https://github.com/azat-co/react-quickly)
