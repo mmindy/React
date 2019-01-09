@@ -12,7 +12,7 @@
 - 1장 [React 살펴보기](./01-meeting_react.md)
 - 2장 [React 첫걸음](./02-baby_steps_with_react.md)
 - 3장 [JSX](./03-introduction_to_jsx.md) 
-- 4장 React 컴포넌트의 상태 객체 
+- 4장 [React 컴포넌트의 상태 객체](./04-making_react_interactive_with_states.md)
 - 5장 React 컴포넌트 라이프사이클 이벤트 
 - 6장 React에서 이벤트 다루기 
 - 7장 [React에서 폼 다루기](./07-working_with_forms_in_React.md) 
